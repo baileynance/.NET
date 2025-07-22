@@ -51,6 +51,30 @@ public static class SeedData
                     Genre = "Western",
                     Rating = "PG",
                     Price = 3.99M
+                },
+                new Movie
+                {
+                    Title = "Spongebob Squarepants Movie",
+                    ReleaseDate = DateTime.Parse("2002-2-04"),
+                    Genre = "Animation",
+                    Rating = "PG",
+                    Price = 1.22M
+                },
+                new Movie
+                {
+                    Title = "Hot Rod",
+                    ReleaseDate = DateTime.Parse("2006-7-11"),
+                    Genre = "Comedy",
+                    Rating = "PG",
+                    Price = 2.75M
+                },
+                new Movie
+                {
+                    Title = "The Dark Knight",
+                    ReleaseDate = DateTime.Parse("2008-7-18"),
+                    Genre = "Action",
+                    Rating = "PG-13",
+                    Price = 10.99M
                 }
             );
             context.SaveChanges();
