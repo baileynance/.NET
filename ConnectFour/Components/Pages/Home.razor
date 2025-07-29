@@ -1,0 +1,36 @@
+﻿@page "/"
+@using System.Drawing
+@using System.Drawing.Imaging
+@using System.Globalization
+
+<PageTitle>Index</PageTitle>
+
+<h3>Select Colors:</h3>
+
+<div>
+    <label>Player 1 Color:</label>
+    <input type="color" @bind="Player1ColorHtml" />
+</div>
+
+<div>
+    <label>Player 2 Color:</label>
+    <input type="color" @bind="Player2ColorHtml" />
+</div>
+
+<Board @key="BoardKey" @rendermode="InteractiveServer" BoardColor="BoardColor" Player1Color="Player1Color"
+    Player2Color="Player2Color" />
+
+
+@code {
+    // HTML color strings
+    private string BoardColorHtml = "#000000";
+    private string Player1ColorHtml = "#008000"; // green
+    private string Player2ColorHtml = "#800080"; // purple
+
+    // Computed System.Drawing.Color properties
+    private Color BoardColor => ColorTranslator.FromHtml(BoardColorHtml);
+    private Color Player1Color => ColorTranslator.FromHtml(Player1ColorHtml);
+    private Color Player2Color => ColorTranslator.FromHtml(Player2ColorHtml);
+
+    private string BoardKey => $"{BoardColorHtml}-{Player1ColorHtml}-{Player2ColorHtml}";
+}
